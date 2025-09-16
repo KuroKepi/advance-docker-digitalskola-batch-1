@@ -1,0 +1,11 @@
+{
+  "name": "docker-selenium-test",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "mocha test/test.js --timeout 20000"
+  },
+  "dependencies": {
+    "mocha": "^10.2.0",
+    "selenium-webdriver": "^4.14.0"
+  }
+}

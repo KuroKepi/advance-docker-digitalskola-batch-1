@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  selenium:
+    image: selenium/standalone-chrome:114.0
+    shm_size: 2gb
+    ports:
+      - "4444:4444"
+
+  test-runner:
+    build: .
+    volumes:
+      - .:/app
+    working_dir: /app
+    depends_on:
+      - selenium
+    command: sh -lc "npm install && npm test"
